@@ -6,7 +6,8 @@ import time
 import wget
 import os
 
-driver = webdriver.Chrome("/home/wai/Applications/chromedriver")
+#Chrome Driver Location
+driver = webdriver.Chrome("chromedriver")
 
 def getLogout():
     if checkLogin():
@@ -138,7 +139,7 @@ def getVideo(courseLink,directory):
 
 def readFILE():
     ans = []
-    with open("/home/wai/Documents/page.txt")as file:
+    with open("./page.txt")as file:
         for line in file:
             if "\n" in line:
                 line = line.replace("\n", " ")
@@ -157,7 +158,7 @@ for i in links:
    getVideo(i,direct)
 getLogout()
 driver.close()
-
+'''
 def getVideo(courseLink):
     cos = courseLink
     if checkLogin() == False:
@@ -181,4 +182,4 @@ def getVideo(courseLink):
             wget.download(res)
             time.sleep(2)
 
-
+'''
